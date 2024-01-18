@@ -1,0 +1,14 @@
+{% extends 'todo_app/base.html' %}
+
+{% block title %}Edit Task{% endblock %}
+
+{% block content %}
+    <h1 class="mb-4">Edit Task</h1>
+    <form method="post" action="">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-warning">Save</button>
+    </form>
+    <a href="{% url 'task_list' %}" class="btn btn-secondary mt-3">Back to task list</a>
+{% endblock %}
+
